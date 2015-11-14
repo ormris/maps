@@ -4,7 +4,7 @@
 		<title>Geolocation</title>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 		<meta charset="utf-8">
-		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'https://maps.googleapis.com' 'unsafe-inline' 'unsafe-eval'" />
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'" />
 		<style>
 html, body {
 	height: 100%;
@@ -15,9 +15,6 @@ html, body {
 				height: 100%;
 			}
 		</style>
-	</head>
-	<body>
-		<div id="map"></div>
 		<script>
 // Note: This example requires that you consent to location sharing when
 // prompted by your browser. If you see the error "The Geolocation service
@@ -59,5 +56,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer>
+    </script>
+	</head>
+	<body>
+		<div id="map"></div>
 	</body>
 </html>
